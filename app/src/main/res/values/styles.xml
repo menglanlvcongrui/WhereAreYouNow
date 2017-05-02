@@ -8,5 +8,13 @@
         <item name="colorAccent">@color/titlieColor</item>
     </style>
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-
+    <style name="Shouye_Top_RadioButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:gravity">center</item>
+        <item name="android:button">@null</item>
+        <item name="android:textColor">@drawable/top_textview_selector</item>
+        <item name="android:drawableRight">@drawable/top_arrow_selector</item>
+        <item name="android:clickable">false</item>
+    </style>
 </resources>

@@ -1,14 +1,82 @@
-<com.example.administrator.whereareyounow.view.PercentFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<com.example.administrator.whereareyounow.view.PercentLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.example.administrator.whereareyounow.fragment.HomeFragment">
+
     <include
         android:id="@+id/shouye"
+        layout="@layout/navigation_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_heightPercent="0.1"
-        layout="@layout/navigation_bar"></include>
+        app:layout_heightPercent="0.1"></include>
 
-</com.example.administrator.whereareyounow.view.PercentFrameLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_gravity="center_horizontal"
+        android:background="#f2f2f2"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/ll_shouye_default"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:orientation="horizontal"
+            android:paddingLeft="15dp">
+
+            <RadioButton
+                android:id="@+id/rb_shouye_default"
+                style="@style/Shouye_Top_RadioButton"
+                android:checked="true"
+                android:drawablePadding="6dp"
+                android:text="默认" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_shouye_time"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rb_shouye_time"
+                style="@style/Shouye_Top_RadioButton"
+                android:drawablePadding="6dp"
+                android:text="时间" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_shouye_distance"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:orientation="horizontal"
+            android:paddingRight="15dp">
+
+            <RadioButton
+                android:id="@+id/rb_shouye_distance"
+                style="@style/Shouye_Top_RadioButton"
+                android:drawablePadding="6dp"
+                android:text="距离" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#b3b3b3"></View>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rcv"
+        android:focusableInTouchMode="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
+</com.example.administrator.whereareyounow.view.PercentLinearLayout>
