@@ -27,7 +27,7 @@
         <activity android:name=".activity.RealnameActivity" />
         <activity android:name=".activity.UseragreementActivity" />
         <activity android:name=".activity.ChatActivity"
-            android:windowSoftInputMode="adjustResize"></activity>
+            android:windowSoftInputMode="adjustResize|stateHidden"></activity>
     </application>
 
 </manifest>
