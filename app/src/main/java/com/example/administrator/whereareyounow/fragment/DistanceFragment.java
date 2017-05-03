@@ -1,7 +1,5 @@
 package com.example.administrator.whereareyounow.fragment;
 
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -12,7 +10,6 @@ import android.view.ViewGroup;
 
 import com.example.administrator.whereareyounow.R;
 import com.example.administrator.whereareyounow.adapter.DistanceAdapter;
-import com.example.administrator.whereareyounow.adapter.TimeAdapter;
 
 import java.util.ArrayList;
 
@@ -34,6 +31,7 @@ public class DistanceFragment extends Fragment {
     private RecyclerView rcv;
     private ArrayList<String> list;
     private DistanceAdapter adapter;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

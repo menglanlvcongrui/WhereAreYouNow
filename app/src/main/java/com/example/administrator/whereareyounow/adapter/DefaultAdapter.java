@@ -32,6 +32,7 @@ public class DefaultAdapter extends RecyclerView.Adapter<DefaultAdapter.ViewHold
     //创建新View，被LayoutManager所调用
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
+
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_help,viewGroup,false);
         ViewHolder vh = new ViewHolder(view);
         return vh;

@@ -1,7 +1,5 @@
 package com.example.administrator.whereareyounow.fragment;
 
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -14,8 +12,6 @@ import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 
 import com.example.administrator.whereareyounow.R;
-
-import java.util.List;
 
 
 public class HelpFragment extends Fragment {
@@ -45,6 +41,7 @@ public class HelpFragment extends Fragment {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 ft = fm.beginTransaction();
                 switch(checkedId){
+
                     case R.id.button:
                         ft.replace(R.id.content, new DefaultFragment());
                         break;
