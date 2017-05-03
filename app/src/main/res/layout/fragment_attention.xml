@@ -28,14 +28,33 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="100dp">
-            <ImageView
+           <!-- <ImageView
                 android:layout_marginLeft="12dp"
                 android:src="@drawable/li_yi_feng"
                 android:layout_gravity="center_vertical"
                 android:layout_width="75dp"
-                android:layout_height="75dp" />
+                android:layout_height="75dp" />-->
+            <RelativeLayout
+                android:layout_width="102dp"
+                android:layout_height="100dp">
+
+                <ImageView
+                    android:id="@+id/image"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/person_1" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignRight="@+id/image"
+                    android:layout_marginRight="-6dp"
+                    android:layout_marginTop="6dp"
+                    android:src="@drawable/searching" />
+            </RelativeLayout>
              <LinearLayout
-                 android:layout_marginLeft="15dp"
                  android:layout_marginTop="13dp"
                  android:layout_width="match_parent"
                  android:orientation="vertical"
@@ -43,14 +62,12 @@
                  <TextView
                      android:text="信息标题信息标题"
                      android:textColor="@color/Treeblack"
-                     android:textSize="@dimen/text_size_three"
                      android:layout_width="wrap_content"
                      android:layout_height="wrap_content" />
                  <TextView
                      android:layout_marginTop="10dp"
                      android:text="详细内容信息详细内容详细内容...."
                      android:textColor="@color/Treeblack"
-                     android:textSize="@dimen/text_size_three"
                      android:layout_width="wrap_content"
                      android:layout_height="wrap_content" />
                  <RelativeLayout
@@ -150,14 +167,12 @@
                     <TextView
                         android:text="父亲：陈浩宇"
                         android:textColor="@color/Treeblack"
-                        android:textSize="@dimen/text_size_three"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
                     <TextView
                         android:layout_marginLeft="20dp"
                         android:text="母亲：刘兰芝"
                         android:textColor="@color/Treeblack"
-                        android:textSize="@dimen/text_size_three"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
                 </LinearLayout>
@@ -169,14 +184,12 @@
                         android:layout_marginTop="10dp"
                         android:text="电话："
                         android:textColor="@color/Treeblack"
-                        android:textSize="@dimen/text_size_three"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
                     <TextView
                         android:layout_marginTop="10dp"
                         android:text="13222358682|13211234567"
                         android:textColor="@color/Treeblack"
-                        android:textSize="@dimen/text_size_five"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
                 </LinearLayout>
@@ -367,4 +380,5 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"/>
     </LinearLayout>
+
 </com.example.administrator.whereareyounow.view.PercentLinearLayout>

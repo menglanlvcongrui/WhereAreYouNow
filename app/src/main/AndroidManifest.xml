@@ -16,7 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".InfomationActivity"></activity>
+        <activity android:name=".InfomationActivity" />
+        <activity android:name=".activity.HelpPublishActivity" />
+        <activity android:name=".activity.InformationDetailsActivity" />
+        <activity android:name=".activity.PublishInformationActivity"></activity>
     </application>
 
 </manifest>

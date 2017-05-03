@@ -37,7 +37,7 @@
 
         <RadioButton
             android:id="@+id/button1"
-            android:layout_marginLeft="120dp"
+            android:layout_marginLeft="110dp"
             android:drawablePadding="6dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -51,7 +51,7 @@
 
         <RadioButton
             android:id="@+id/button2"
-            android:layout_marginLeft="120dp"
+            android:layout_marginLeft="110dp"
             android:drawablePadding="6dp"
             android:layout_marginRight="16dp"
             android:layout_width="wrap_content"
