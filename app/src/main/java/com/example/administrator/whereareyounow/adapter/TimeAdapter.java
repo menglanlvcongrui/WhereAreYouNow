@@ -1,6 +1,7 @@
 package com.example.administrator.whereareyounow.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.administrator.whereareyounow.R;
+import com.example.administrator.whereareyounow.activity.InformationDetailsActivity;
 
 import java.util.ArrayList;
 
@@ -37,6 +39,14 @@ public class TimeAdapter extends RecyclerView.Adapter<TimeAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, int position) {
 //        viewHolder.mTextView.setText(list.get()position]);
+        viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1=new Intent();
+                intent1.setClass(mcontext,InformationDetailsActivity.class);
+                mcontext.startActivity(intent1);
+            }
+        });
     }
     //获取数据的数量
     @Override

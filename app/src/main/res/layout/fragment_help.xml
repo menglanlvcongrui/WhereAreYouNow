@@ -29,6 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:button="@null"
+            android:checked="true"
             android:drawableRight="@drawable/head_help_selector"
             android:gravity="center"
             android:text="默认"

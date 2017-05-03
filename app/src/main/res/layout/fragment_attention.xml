@@ -290,14 +290,12 @@
                     <TextView
                         android:text="父亲：高谷子"
                         android:textColor="@color/Treeblack"
-                        android:textSize="@dimen/text_size_three"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
                     <TextView
                         android:layout_marginLeft="20dp"
                         android:text="母亲：沈敏霞"
                         android:textColor="@color/Treeblack"
-                        android:textSize="@dimen/text_size_three"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
                 </LinearLayout>
@@ -309,14 +307,12 @@
                         android:layout_marginTop="10dp"
                         android:text="电话："
                         android:textColor="@color/Treeblack"
-                        android:textSize="@dimen/text_size_three"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
                     <TextView
                         android:layout_marginTop="10dp"
                         android:text="13291096576|13591096576"
                         android:textColor="@color/Treeblack"
-                        android:textSize="@dimen/text_size_five"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
                 </LinearLayout>
