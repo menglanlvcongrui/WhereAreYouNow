@@ -1,16 +1,13 @@
 package com.example.administrator.whereareyounow.adapter;
 
 import android.content.Context;
-import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.Toast;
+import android.widget.TextView;
 
 import com.example.administrator.whereareyounow.R;
-import com.example.administrator.whereareyounow.activity.ChatActivity;
 
 import java.util.ArrayList;
 
@@ -18,31 +15,24 @@ import java.util.ArrayList;
  * Created by GX on 2017/5/2 0002.
  */
 
-public class HomedefaultAdapter extends RecyclerView.Adapter<HomedefaultAdapter.ViewHolder> {
+public class PushnotificationAdapter extends RecyclerView.Adapter<PushnotificationAdapter.ViewHolder> {
     private Context mcontext;
     private ArrayList<String> list;
-    public HomedefaultAdapter(Context context, ArrayList<String> list) {
+    public PushnotificationAdapter(Context context, ArrayList<String> list) {
         this.mcontext = context;
         this.list = list;
     }
     //创建新View，被LayoutManager所调用
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_default_list,viewGroup,false);
+        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_pushnotification,viewGroup,false);
         ViewHolder vh = new ViewHolder(view);
         return vh;
     }
     //将数据与界面进行绑定的操作
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, int position) {
-        viewHolder.chat.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(mcontext, ChatActivity.class);
-                mcontext.startActivity(intent);
-                Toast.makeText(mcontext,"ss",Toast.LENGTH_SHORT).show();
-            }
-        });
+//        viewHolder.mTextView.setText(list.get()position]);
     }
     //获取数据的数量
     @Override
@@ -51,11 +41,9 @@ public class HomedefaultAdapter extends RecyclerView.Adapter<HomedefaultAdapter.
     }
     //自定义的ViewHolder，持有每个Item的的所有界面元素
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        ImageView chat;
-
-        public ViewHolder(View view) {
+        public TextView mTextView;
+        public ViewHolder(View view){
             super(view);
-            chat = (ImageView) view.findViewById(R.id.chat);
 //            mTextView = (TextView) view.findViewById(R.id.text);
         }
     }

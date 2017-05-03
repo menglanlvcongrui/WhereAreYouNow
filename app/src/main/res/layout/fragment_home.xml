@@ -13,62 +13,60 @@
         android:layout_height="wrap_content"
         app:layout_heightPercent="0.1"></include>
 
-    <LinearLayout
+    <RadioGroup
+        android:id="@+id/rg"
         android:layout_width="match_parent"
         android:layout_height="30dp"
-        android:layout_gravity="center_horizontal"
-        android:background="#f2f2f2"
+        android:layout_gravity="center"
+        android:background="@color/grayFive"
+        android:gravity="center"
         android:orientation="horizontal">
 
-        <LinearLayout
-            android:id="@+id/ll_shouye_default"
-            android:layout_width="0dp"
+        <RadioButton
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="left"
-            android:orientation="horizontal"
-            android:paddingLeft="15dp">
-
-            <RadioButton
-                android:id="@+id/rb_shouye_default"
-                style="@style/Shouye_Top_RadioButton"
-                android:checked="true"
-                android:drawablePadding="6dp"
-                android:text="默认" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/ll_shouye_time"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="16dp"
+            android:button="@null"
+            android:checked="true"
+            android:drawablePadding="6dp"
+            android:drawableRight="@drawable/head_help_selector"
             android:gravity="center"
-            android:orientation="horizontal">
+            android:text="默认"
+            android:textColor="@color/color_help_selector"
+            android:textSize="@dimen/text_size_five" />
 
-            <RadioButton
-                android:id="@+id/rb_shouye_time"
-                style="@style/Shouye_Top_RadioButton"
-                android:drawablePadding="6dp"
-                android:text="时间" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/ll_shouye_distance"
-            android:layout_width="0dp"
+        <RadioButton
+            android:id="@+id/button1"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="right"
-            android:orientation="horizontal"
-            android:paddingRight="15dp">
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="110dp"
+            android:button="@null"
+            android:drawablePadding="6dp"
+            android:drawableRight="@drawable/head_help_selector"
+            android:gravity="center"
+            android:text="时间"
+            android:textColor="@color/color_help_selector"
+            android:textSize="@dimen/text_size_five" />
 
-            <RadioButton
-                android:id="@+id/rb_shouye_distance"
-                style="@style/Shouye_Top_RadioButton"
-                android:drawablePadding="6dp"
-                android:text="距离" />
-        </LinearLayout>
-    </LinearLayout>
+        <RadioButton
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="110dp"
+            android:layout_marginRight="16dp"
+            android:button="@null"
+            android:drawablePadding="6dp"
+            android:drawableRight="@drawable/head_help_selector"
+            android:gravity="center"
+            android:text="距离"
+            android:textColor="@color/color_help_selector"
+            android:textSize="@dimen/text_size_five" />
 
+    </RadioGroup>
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
@@ -76,7 +74,7 @@
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rcv"
-        android:focusableInTouchMode="true"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
+        android:layout_height="wrap_content"
+        android:overScrollMode="never"></android.support.v7.widget.RecyclerView>
 </com.example.administrator.whereareyounow.view.PercentLinearLayout>
