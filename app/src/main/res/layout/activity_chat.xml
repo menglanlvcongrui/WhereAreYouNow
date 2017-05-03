@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:layout_gravity="bottom"
     tools:context="com.example.administrator.whereareyounow.activity.ChatActivity">
 
     <include
@@ -22,6 +23,7 @@
 
     <LinearLayout
         android:id="@+id/line"
+        android:layout_gravity="bottom"
         android:layout_width="match_parent"
         android:layout_alignParentBottom="true"
         android:layout_height="wrap_content">
