@@ -37,14 +37,15 @@
                 app:layout_heightPercent="0.6875">
 
                 <ImageView
+                    android:id="@+id/title_left"
                     android:paddingLeft="12dp"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:src="@mipmap/back"
-                    android:visibility="gone"
                     />
 
                 <TextView
+                    android:id="@+id/title_center"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_centerInParent="true"
@@ -52,12 +53,26 @@
                     android:textColor="@color/white"
                     android:textSize="@dimen/text_size_one"
                     android:text="你在哪" />
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                <FrameLayout
+                    android:layout_centerVertical="true"
                     android:layout_alignParentRight="true"
-                    android:paddingRight="15dp"
-                    android:src="@mipmap/release"/>
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/title_right"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:paddingRight="15dp"
+                        android:src="@mipmap/release"/>
+                    <ImageView
+                        android:visibility="gone"
+                        android:id="@+id/title_right1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:paddingRight="15dp"
+                        android:src="@mipmap/release"/>
+                </FrameLayout>
+
             </RelativeLayout>
         </com.example.administrator.whereareyounow.view.PercentLinearLayout>
     </android.support.v7.widget.Toolbar>

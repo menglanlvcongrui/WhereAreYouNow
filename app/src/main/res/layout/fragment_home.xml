@@ -6,7 +6,7 @@
     android:orientation="vertical"
     tools:context="com.example.administrator.whereareyounow.fragment.HomeFragment">
 
-    <include
+    <!--<include
         android:id="@+id/shouye"
         layout="@layout/navigation_bar"
         android:layout_width="match_parent"
@@ -76,5 +76,77 @@
         android:id="@+id/rcv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:overScrollMode="never"></android.support.v7.widget.RecyclerView>
+        android:overScrollMode="never"></android.support.v7.widget.RecyclerView>-->
+    <include
+        android:id="@+id/shouye"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_heightPercent="0.1"
+        layout="@layout/navigation_bar"></include>
+
+    <RadioGroup
+        android:id="@+id/rg"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_gravity="center"
+        android:background="@color/grayFive"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/button"
+            android:layout_marginLeft="16dp"
+            android:drawablePadding="6dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:button="@null"
+            android:checked="true"
+            android:drawableRight="@drawable/head_help_selector"
+            android:gravity="center"
+            android:text="默认"
+            android:textColor="@color/color_help_selector"
+            android:textSize="@dimen/text_size_five" />
+
+        <RadioButton
+            android:id="@+id/button1"
+            android:layout_marginLeft="110dp"
+            android:drawablePadding="6dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:button="@null"
+            android:drawableRight="@drawable/head_help_selector"
+            android:gravity="center"
+            android:text="时间"
+            android:textColor="@color/color_help_selector"
+            android:textSize="@dimen/text_size_five" />
+
+        <RadioButton
+            android:id="@+id/button2"
+            android:layout_marginLeft="110dp"
+            android:drawablePadding="6dp"
+            android:layout_marginRight="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:button="@null"
+            android:drawableRight="@drawable/head_help_selector"
+            android:gravity="center"
+            android:text="距离"
+            android:textColor="@color/color_help_selector"
+            android:textSize="@dimen/text_size_five" />
+
+    </RadioGroup>
+
+    <View
+        android:background="@color/grayTwelve1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+    <LinearLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal"></LinearLayout>
 </com.example.administrator.whereareyounow.view.PercentLinearLayout>
