@@ -26,8 +26,10 @@
         <activity android:name=".activity.PushnotificationActivity" />
         <activity android:name=".activity.RealnameActivity" />
         <activity android:name=".activity.UseragreementActivity" />
-        <activity android:name=".activity.ChatActivity"
-            android:windowSoftInputMode="adjustResize|stateHidden"></activity>
+        <activity
+            android:name=".activity.ChatActivity"
+            android:screenOrientation="portrait"
+          ></activity>
     </application>
 
 </manifest>

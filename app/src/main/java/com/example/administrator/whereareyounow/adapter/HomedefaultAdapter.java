@@ -7,7 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.example.administrator.whereareyounow.R;
 import com.example.administrator.whereareyounow.activity.ChatActivity;
@@ -40,7 +39,6 @@ public class HomedefaultAdapter extends RecyclerView.Adapter<HomedefaultAdapter.
             public void onClick(View view) {
                 Intent intent = new Intent(mcontext, ChatActivity.class);
                 mcontext.startActivity(intent);
-                Toast.makeText(mcontext,"ss",Toast.LENGTH_SHORT).show();
             }
         });
     }
