@@ -1,15 +1,12 @@
 package com.example.administrator.whereareyounow.activity;
 
-import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -27,7 +24,6 @@ public class ChatActivity extends AppCompatActivity {
     Button btnSend;
     RecyclerView recyclerView;
     private MsgAdapter adapter;
-    InputMethodManager imm;
     LinearLayout line;
 
     @Override
@@ -39,8 +35,8 @@ public class ChatActivity extends AppCompatActivity {
             //透明导航栏
 //            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
         }
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
         setContentView(R.layout.activity_chat);
-        imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
 //        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE|WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
         initMsg();
         init();
@@ -58,17 +54,6 @@ public class ChatActivity extends AppCompatActivity {
                 }
             }
         });
-    }
-    @Override
-    public boolean onTouchEvent(MotionEvent event) {
-        // TODO Auto-generated method stub
-
-        if (getCurrentFocus() != null
-                && getCurrentFocus().getWindowToken() != null) {
-            imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),
-                    InputMethodManager.HIDE_NOT_ALWAYS);
-        }
-        return super.onTouchEvent(event);
     }
     private void init() {
         btnSend = (Button) findViewById(R.id.btnSend);
