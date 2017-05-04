@@ -29,6 +29,7 @@
         <activity android:name=".activity.RealnameActivity" />
         <activity android:name=".activity.UseragreementActivity" />
         <activity android:name=".activity.LoginActivity" />
+        <activity android:name=".activity.GuideActivity" />
         <activity
             android:name=".activity.SigninActivity"
             android:windowSoftInputMode="adjustUnspecified|stateHidden" />
