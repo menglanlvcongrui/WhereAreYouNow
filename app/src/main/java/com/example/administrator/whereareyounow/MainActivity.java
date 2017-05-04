@@ -16,6 +16,7 @@ import android.view.WindowManager;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+import com.example.administrator.whereareyounow.activity.GuideActivity;
 import com.example.administrator.whereareyounow.fragment.AttentionFragment;
 import com.example.administrator.whereareyounow.fragment.HelpFragment;
 import com.example.administrator.whereareyounow.fragment.HomeFragment;
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     private int previousIndex = 0;
     int index = 0;
     SharedPreferences sp;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,13 +46,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         sp = getSharedPreferences("Whereareyou", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sp.edit();
+        index = sp.getInt("index", 0);
         editor.putInt("index", index);
         editor.commit();
         if (sp.getInt("index", 0) == 0) {
-//            startActivity(new Intent(this, GuideActivity.class));
-//            editor.putInt("index", 1);
-//            editor.commit();
-//            finish();
+            startActivity(new Intent(this, GuideActivity.class));
+            editor.putInt("index", 1);
+            editor.commit();
+            finish();
             return;
         } else {
         }
