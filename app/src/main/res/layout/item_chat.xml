@@ -25,7 +25,7 @@
             android:layout_height="45dp"
             android:layout_gravity="center"
             android:layout_margin="10dp"
-            android:background="#bddff7"
+            android:background="@drawable/chat01_bg"
             android:gravity="center"
             android:padding="10dp"
             android:text="112s1dd" />
@@ -45,7 +45,7 @@
             android:layout_height="45dp"
             android:layout_gravity="center"
             android:layout_margin="10dp"
-            android:background="#bddff7"
+            android:background="@drawable/chat02_bg"
             android:gravity="center"
             android:padding="10dp"
             android:text="但少点" />

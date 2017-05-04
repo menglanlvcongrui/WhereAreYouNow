@@ -63,18 +63,26 @@ public class ChatActivity extends AppCompatActivity implements View.OnClickListe
         title_left.setOnClickListener(this);
         btnSend.setOnClickListener(this);
     }
-
+    boolean state=true;
     @Override
     public void onClick(View view) {
         Intent intent;
         switch (view.getId()) {
             case R.id.btnSend:
                 String content = inputText.getText().toString().trim();
-                if (!content.equals("")) {
+                if (!content.equals("")&&state) {
                     msgList.add(new Msg(content, Msg.TYPE_SEND));
                     adapter.notifyItemInserted(msgList.size() - 1);
                     recyclerView.scrollToPosition(msgList.size() - 1);
                     inputText.setText("");
+                    state=false;
+                }else if (!content.equals("")&&!state){
+
+                    msgList.add(new Msg(content, Msg.TYPE_RECEIVE));
+                    adapter.notifyItemInserted(msgList.size() - 1);
+                    recyclerView.scrollToPosition(msgList.size() - 1);
+                    inputText.setText("");
+                    state=true;
                 }
                 break;
             case R.id.title_left:

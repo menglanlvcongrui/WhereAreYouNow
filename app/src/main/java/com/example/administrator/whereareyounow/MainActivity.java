@@ -51,8 +51,6 @@ public class MainActivity extends AppCompatActivity {
         editor.commit();
         if (sp.getInt("index", 0) == 0) {
             startActivity(new Intent(this, GuideActivity.class));
-            editor.putInt("index", 1);
-            editor.commit();
             finish();
             return;
         } else {
