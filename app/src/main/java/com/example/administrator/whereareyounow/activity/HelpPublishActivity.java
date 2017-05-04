@@ -9,7 +9,7 @@ import android.widget.TextView;
 import com.example.administrator.whereareyounow.R;
 
 public class HelpPublishActivity extends AppCompatActivity implements View.OnClickListener{
-    private TextView title_center;
+    private TextView title_center1;
     private TextView tv_title_right;
     private ImageView title_left;
 
@@ -17,11 +17,11 @@ public class HelpPublishActivity extends AppCompatActivity implements View.OnCli
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_help_publish);
-        title_center= (TextView)findViewById(R.id.title_center);
+        title_center1= (TextView)findViewById(R.id.title_center);
         tv_title_right= (TextView)findViewById(R.id.title_right);
         title_left=(ImageView)findViewById(R.id.title_left);
         title_left.setOnClickListener(this);
-        title_center.setText("帮助信息");
+        title_center1.setText("发布信息");
         tv_title_right.setText("立即发布");
     }
 

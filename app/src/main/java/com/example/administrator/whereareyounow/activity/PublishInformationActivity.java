@@ -18,7 +18,7 @@ public class PublishInformationActivity extends AppCompatActivity implements Vie
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_publish_information);
         init();
-        tv_title_center.setText("帮助信息");
+        tv_title_center.setText("发布信息");
         tv_title_right.setText("立即发布");
     }
 
