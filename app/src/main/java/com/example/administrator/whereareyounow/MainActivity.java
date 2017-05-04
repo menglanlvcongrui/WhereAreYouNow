@@ -1,13 +1,15 @@
 package com.example.administrator.whereareyounow;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Build;
+import android.os.Bundle;
 import android.os.Message;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -27,7 +29,8 @@ public class MainActivity extends AppCompatActivity {
     private List<Fragment> fragmentList;
     private int currentIndex = 0;
     private int previousIndex = 0;
-
+    int index = 0;
+    SharedPreferences sp;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +42,18 @@ public class MainActivity extends AppCompatActivity {
 //            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
         }
         setContentView(R.layout.activity_main);
+        sp = getSharedPreferences("Whereareyou", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sp.edit();
+        editor.putInt("index", index);
+        editor.commit();
+        if (sp.getInt("index", 0) == 0) {
+//            startActivity(new Intent(this, GuideActivity.class));
+//            editor.putInt("index", 1);
+//            editor.commit();
+//            finish();
+            return;
+        } else {
+        }
    /* }
 }*/
         rgTabs = (RadioGroup) findViewById(R.id.rg_tabs);
@@ -59,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
     public android.os.Handler handler = new android.os.Handler() {
         @Override
         public void handleMessage(Message msg) {
@@ -66,12 +82,15 @@ public class MainActivity extends AppCompatActivity {
             ((RadioButton) rgTabs.getChildAt(currentIndex)).setChecked(true);
         }
     };
+
     @Override
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
         setIntent(intent);
         Bundle bundle = getIntent().getExtras();
-        if (bundle==null){return;}
+        if (bundle == null) {
+            return;
+        }
         if (bundle.getString("name").equals("shopping")) {
             //点击购物车图标，跳转到购物车碎片
             currentIndex = 2;

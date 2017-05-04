@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/white"
+    android:fitsSystemWindows="true"
     tools:context="com.example.administrator.whereareyounow.activity.InformationDetailsActivity">
     <include
         android:id="@+id/shouye"

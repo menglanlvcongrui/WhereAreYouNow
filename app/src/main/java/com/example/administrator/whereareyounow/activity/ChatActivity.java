@@ -1,5 +1,6 @@
 package com.example.administrator.whereareyounow.activity;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -20,7 +21,7 @@ import com.example.administrator.whereareyounow.adapter.MsgAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ChatActivity extends AppCompatActivity {
+public class ChatActivity extends AppCompatActivity implements View.OnClickListener {
     List<Msg> msgList = new ArrayList<>();
     EditText inputText;
     Button btnSend;
@@ -28,7 +29,7 @@ public class ChatActivity extends AppCompatActivity {
     private MsgAdapter adapter;
     LinearLayout line;
     private TextView tv_title_center;
-    private ImageView iv;
+    private ImageView title_left;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,20 +47,8 @@ public class ChatActivity extends AppCompatActivity {
         init();
         adapter = new MsgAdapter(msgList);
         recyclerView.setAdapter(adapter);
-        btnSend.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String content = inputText.getText().toString().trim();
-                if (!content.equals("")) {
-                    msgList.add(new Msg(content, Msg.TYPE_SEND));
-                    adapter.notifyItemInserted(msgList.size() - 1);
-                    recyclerView.scrollToPosition(msgList.size() - 1);
-                    inputText.setText("");
-                }
-            }
-        });
-        tv_title_center.setText("聊天室");
 
+        tv_title_center.setText("聊天室");
     }
 
     private void init() {
@@ -68,16 +57,33 @@ public class ChatActivity extends AppCompatActivity {
         recyclerView = (RecyclerView) findViewById(R.id.msg_recyclerView);
         line = (LinearLayout) findViewById(R.id.line);
         tv_title_center = (TextView) findViewById(R.id.title_center);
-        iv = (ImageView) findViewById(R.id.title_left);
-        iv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+        title_left = (ImageView) findViewById(R.id.title_left);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(linearLayoutManager);
+        title_left.setOnClickListener(this);
+        btnSend.setOnClickListener(this);
     }
+
+    @Override
+    public void onClick(View view) {
+        Intent intent;
+        switch (view.getId()) {
+            case R.id.btnSend:
+                String content = inputText.getText().toString().trim();
+                if (!content.equals("")) {
+                    msgList.add(new Msg(content, Msg.TYPE_SEND));
+                    adapter.notifyItemInserted(msgList.size() - 1);
+                    recyclerView.scrollToPosition(msgList.size() - 1);
+                    inputText.setText("");
+                }
+                break;
+            case R.id.title_left:
+                finish();
+                break;
+        }
+
+    }
+
 
     private void initMsg() {
         Msg msg1 = new Msg("hello sealong", Msg.TYPE_RECEIVE);

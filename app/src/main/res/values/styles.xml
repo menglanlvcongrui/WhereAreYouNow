@@ -6,6 +6,7 @@
         <item name="colorPrimary">@color/yellowOne</item>
         <item name="colorPrimaryDark">@color/yellowOne</item>
         <item name="colorAccent">@color/yellowOne</item>
+        <item name="android:windowTranslucentStatus">true</item>
     </style>
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
     <style name="Shouye_Top_RadioButton">

@@ -30,19 +30,25 @@
         android:layout_gravity="bottom"
         android:layout_width="match_parent"
         android:layout_marginTop="10dp"
-        android:layout_height="wrap_content">
+        android:layout_marginLeft="12dp"
+        android:layout_marginBottom="12dp"
+        android:gravity="center"
+        android:layout_height="35dp">
         <EditText
+            android:background="@drawable/head_bg"
             android:id="@+id/input_text"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:hint="反反复复"
             android:maxLines="2" />
-
         <Button
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:textColor="@color/white"
             android:id="@+id/btnSend"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="55dp"
+            android:layout_height="33dp"
+            android:background="@drawable/send_selector_bg"
             android:text="发送" />
     </LinearLayout>
 </com.example.administrator.whereareyounow.view.PercentLinearLayout>

@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;import com.example.administrator.whereareyounow.Dialog.ContactusDialog;
 import com.example.administrator.whereareyounow.Dialog.ExitDialog;
@@ -15,6 +16,7 @@ public class AccountSettingActivity extends AppCompatActivity implements View.On
     ContactusDialog contactusDialog;
     private RelativeLayout exit_account,modify_password,contact_us;
     private TextView tv_title_center;
+    private ImageView title_left;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +37,8 @@ public class AccountSettingActivity extends AppCompatActivity implements View.On
         modify_password = (RelativeLayout) findViewById(R.id.modify_password);
         contact_us=(RelativeLayout)findViewById(R.id.contact_us);
         tv_title_center= (TextView)findViewById(R.id.title_center);
+        title_left=(ImageView)findViewById(R.id.title_left);
+        title_left.setOnClickListener(this);
         contact_us.setOnClickListener(this);
         modify_password.setOnClickListener(this);
         exit_account.setOnClickListener(this);
@@ -53,6 +57,9 @@ public class AccountSettingActivity extends AppCompatActivity implements View.On
                 break;
             case R.id.contact_us:
                startContactDialog();
+                break;
+            case R.id.title_left:
+                finish();
                 break;
         }
     }
