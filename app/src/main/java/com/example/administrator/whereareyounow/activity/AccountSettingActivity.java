@@ -1,5 +1,4 @@
 package com.example.administrator.whereareyounow.activity;
-
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -7,8 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.RelativeLayout;
-
-import com.example.administrator.whereareyounow.Dialog.ContactusDialog;
+import android.widget.TextView;import com.example.administrator.whereareyounow.Dialog.ContactusDialog;
 import com.example.administrator.whereareyounow.Dialog.ExitDialog;
 import com.example.administrator.whereareyounow.R;
 
@@ -16,6 +14,7 @@ public class AccountSettingActivity extends AppCompatActivity implements View.On
     ExitDialog exitDialog;
     ContactusDialog contactusDialog;
     private RelativeLayout exit_account,modify_password,contact_us;
+    private TextView tv_title_center;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,13 +27,14 @@ public class AccountSettingActivity extends AppCompatActivity implements View.On
         }
         setContentView(R.layout.activity_account_setting);
         init();
-
+        tv_title_center.setText("账户设置");
     }
 
     private void init() {
         exit_account = (RelativeLayout) findViewById(R.id.exit_account);
         modify_password = (RelativeLayout) findViewById(R.id.modify_password);
         contact_us=(RelativeLayout)findViewById(R.id.contact_us);
+        tv_title_center= (TextView)findViewById(R.id.title_center);
         contact_us.setOnClickListener(this);
         modify_password.setOnClickListener(this);
         exit_account.setOnClickListener(this);
@@ -45,14 +45,14 @@ public class AccountSettingActivity extends AppCompatActivity implements View.On
         Intent intent;
         switch (view.getId()){
             case R.id.exit_account:
-                startExitDialog();
+               // startExitDialog();
                 break;
             case R.id.modify_password:
                 intent=new Intent(AccountSettingActivity.this,ChangepwdActivity.class);
                 startActivity(intent);
                 break;
             case R.id.contact_us:
-                startContactDialog();
+              // startContactDialog();
                 break;
         }
     }

@@ -3,6 +3,7 @@ package com.example.administrator.whereareyounow.fragment;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -26,7 +27,9 @@ public class MyFragment extends Fragment implements View.OnClickListener {
     TextView photo, picture, cancel;
     Dialog headDialog;
     private RelativeLayout layout_push,layout_user,layout_count,layout_realname;
-
+    private ImageView title_left;
+    private ImageView title_right1;
+    private TextView my_title_center;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -103,5 +106,14 @@ public class MyFragment extends Fragment implements View.OnClickListener {
         picture.setOnClickListener(this);
         photo.setOnClickListener(this);
         cancel.setOnClickListener(this);
+    }
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        title_left= (ImageView) view.findViewById(R.id.title_left);
+        my_title_center= (TextView) view.findViewById(R.id.title_center);
+        title_left.setVisibility(view.GONE);
+        my_title_center.setText("个人中心");
     }
 }

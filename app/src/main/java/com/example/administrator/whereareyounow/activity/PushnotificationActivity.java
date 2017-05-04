@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.WindowManager;
+import android.widget.TextView;
 
 import com.example.administrator.whereareyounow.R;
 import com.example.administrator.whereareyounow.adapter.PushnotificationAdapter;
@@ -16,7 +17,7 @@ public class PushnotificationActivity extends AppCompatActivity {
     private RecyclerView pushlist;
     private ArrayList<String> list;
     private PushnotificationAdapter adapter;
-
+    private TextView tv_title_center;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +35,8 @@ public class PushnotificationActivity extends AppCompatActivity {
         initView();
         adapter = new PushnotificationAdapter(this, list);
         pushlist.setAdapter(adapter);
+        tv_title_center= (TextView)findViewById(R.id.title_center);
+        tv_title_center.setText("通知");
     }
     //对RecyclerView进行设置
     private void initView() {

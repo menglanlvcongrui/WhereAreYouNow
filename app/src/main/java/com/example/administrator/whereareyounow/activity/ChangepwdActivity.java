@@ -6,12 +6,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.administrator.whereareyounow.R;
 
 public class ChangepwdActivity extends AppCompatActivity {
 TextView forgetpwd;
+    private TextView tv_title_center;
+    private ImageView iv;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +26,10 @@ TextView forgetpwd;
         }
         setContentView(R.layout.activity_changepsd);
         forgetpwd= (TextView) findViewById(R.id.forgetpwd);
+        tv_title_center= (TextView)findViewById(R.id.title_center);
+        iv= (ImageView) findViewById(R.id.title_right1);
+        iv.setImageResource(R.drawable.love);
+        tv_title_center.setText("修改密码");
         forgetpwd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -111,9 +111,9 @@
                              android:layout_height="12dp"
                              android:background="@drawable/red_circle"
                              android:text="3"
-                             android:gravity="center_horizontal"
+                             android:gravity="center"
                              android:textColor="@color/white"
-                             android:textSize="@dimen/text_size_six" />
+                             android:textSize="@dimen/text_size_seven" />
                      </FrameLayout>
                      <ImageView
                          android:id="@+id/love"
@@ -236,7 +236,7 @@
                             android:text="1"
                             android:gravity="center_horizontal"
                             android:textColor="@color/white"
-                            android:textSize="@dimen/text_size_six" />
+                            android:textSize="@dimen/text_size_seven" />
                     </FrameLayout>
                     <ImageView
                         android:id="@+id/love1"

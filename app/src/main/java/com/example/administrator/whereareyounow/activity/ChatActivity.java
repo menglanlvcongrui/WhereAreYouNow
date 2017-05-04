@@ -11,6 +11,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.example.administrator.whereareyounow.Msg;
 import com.example.administrator.whereareyounow.R;
@@ -27,7 +28,7 @@ public class ChatActivity extends AppCompatActivity {
     private MsgAdapter adapter;
     InputMethodManager imm;
     LinearLayout line;
-
+    private TextView tv_title_center;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,6 +59,7 @@ public class ChatActivity extends AppCompatActivity {
                 }
             }
         });
+        tv_title_center.setText("聊天室");
     }
 
     private void init() {
@@ -65,6 +67,7 @@ public class ChatActivity extends AppCompatActivity {
         inputText = (EditText) findViewById(R.id.input_text);
         recyclerView = (RecyclerView) findViewById(R.id.msg_recyclerView);
         line = (LinearLayout) findViewById(R.id.line);
+        tv_title_center= (TextView)findViewById(R.id.title_center);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(linearLayoutManager);
     }

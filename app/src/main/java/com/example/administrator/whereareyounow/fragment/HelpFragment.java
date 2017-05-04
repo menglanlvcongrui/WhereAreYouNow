@@ -1,5 +1,6 @@
 package com.example.administrator.whereareyounow.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -14,6 +15,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.example.administrator.whereareyounow.R;
+import com.example.administrator.whereareyounow.activity.PublishInformationActivity;
 
 
 public class HelpFragment extends Fragment {
@@ -23,6 +25,7 @@ public class HelpFragment extends Fragment {
     private FragmentManager fm;
     private FragmentTransaction ft;
     private ImageView title_left;
+    private ImageView title_right1;
     private TextView title_center;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -38,9 +41,18 @@ public class HelpFragment extends Fragment {
         radioGroup= (RadioGroup)view.findViewById(R.id.rg1);
         title_left= (ImageView) view.findViewById(R.id.title_left);
         title_center= (TextView) view.findViewById(R.id.title_center);
+        title_right1= (ImageView) view.findViewById(R.id.title_right1);
         title_left.setVisibility(view.GONE);
         title_center.setText("我在这");
-
+        title_right1.setVisibility(view.VISIBLE);
+        title_right1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent();
+                intent.setClass(getContext(), PublishInformationActivity.class);
+                startActivity(intent);
+            }
+        });
         fm = getFragmentManager();
         ft = fm.beginTransaction();
         ft.replace(R.id.content1, new DefaultFragment());

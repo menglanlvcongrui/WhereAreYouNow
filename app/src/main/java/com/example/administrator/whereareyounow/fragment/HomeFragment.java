@@ -1,5 +1,6 @@
 package com.example.administrator.whereareyounow.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -15,6 +16,7 @@ import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 
 import com.example.administrator.whereareyounow.R;
+import com.example.administrator.whereareyounow.activity.PublishInformationActivity;
 import com.example.administrator.whereareyounow.adapter.HomedefaultAdapter;
 
 import java.util.ArrayList;
@@ -88,6 +90,14 @@ public class HomeFragment extends Fragment {
         iv_title_right= (ImageView) view.findViewById(R.id.title_right1);
         iv_title_left.setVisibility(view.GONE);
         iv_title_right.setVisibility(view.VISIBLE);
+        iv_title_right.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent();
+                intent.setClass(getContext(), PublishInformationActivity.class);
+                startActivity(intent);
+            }
+        });
         fm = getFragmentManager();
         ft = fm.beginTransaction();
         ft.replace(R.id.content, new HomeDefaultFragment());
