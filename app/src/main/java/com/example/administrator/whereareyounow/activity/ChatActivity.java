@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -27,6 +28,7 @@ public class ChatActivity extends AppCompatActivity {
     private MsgAdapter adapter;
     LinearLayout line;
     private TextView tv_title_center;
+    private ImageView iv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +59,7 @@ public class ChatActivity extends AppCompatActivity {
             }
         });
         tv_title_center.setText("聊天室");
+
     }
 
     private void init() {
@@ -65,6 +68,13 @@ public class ChatActivity extends AppCompatActivity {
         recyclerView = (RecyclerView) findViewById(R.id.msg_recyclerView);
         line = (LinearLayout) findViewById(R.id.line);
         tv_title_center = (TextView) findViewById(R.id.title_center);
+        iv = (ImageView) findViewById(R.id.title_left);
+        iv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(linearLayoutManager);
     }

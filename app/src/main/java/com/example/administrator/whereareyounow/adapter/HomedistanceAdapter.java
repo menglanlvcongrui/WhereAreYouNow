@@ -6,9 +6,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.administrator.whereareyounow.R;
+import com.example.administrator.whereareyounow.activity.ChatActivity;
 import com.example.administrator.whereareyounow.activity.InformationDetailsActivity;
 
 import java.util.ArrayList;
@@ -45,9 +47,18 @@ public class HomedistanceAdapter extends RecyclerView.Adapter<HomedistanceAdapte
         viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setClass(mcontext, InformationDetailsActivity.class);
-                mcontext.startActivity(intent);
+                Intent intent4 = new Intent();
+                intent4.setClass(mcontext, InformationDetailsActivity.class);
+                mcontext.startActivity(intent4);
+            }
+        });
+
+        viewHolder.iv_distance_chat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent5 = new Intent();
+                intent5.setClass(mcontext, ChatActivity.class);
+                mcontext.startActivity(intent5);
             }
         });
     }
@@ -61,10 +72,11 @@ public class HomedistanceAdapter extends RecyclerView.Adapter<HomedistanceAdapte
     //自定义的ViewHolder，持有每个Item的的所有界面元素
     public static class ViewHolder extends RecyclerView.ViewHolder {
         public TextView mTextView;
-
+        public ImageView iv_distance_chat;
         public ViewHolder(View view) {
             super(view);
 //            mTextView = (TextView) view.findViewById(R.id.text);
+           iv_distance_chat= (ImageView) view.findViewById(R.id.chat);
         }
     }
 }

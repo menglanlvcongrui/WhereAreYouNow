@@ -6,10 +6,12 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.administrator.whereareyounow.InfomationActivity;
 import com.example.administrator.whereareyounow.R;
+import com.example.administrator.whereareyounow.activity.ChatActivity;
 import com.example.administrator.whereareyounow.activity.InformationDetailsActivity;
 
 import java.util.ArrayList;
@@ -49,6 +51,14 @@ public class DefaultAdapter extends RecyclerView.Adapter<DefaultAdapter.ViewHold
                   mcontext.startActivity(intent);
               }
           });
+        viewHolder.iv_chat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent2=new Intent();
+                intent2.setClass(mcontext, ChatActivity.class);
+                mcontext.startActivity(intent2);
+            }
+        });
     }
     //获取数据的数量
     @Override
@@ -58,9 +68,11 @@ public class DefaultAdapter extends RecyclerView.Adapter<DefaultAdapter.ViewHold
     //自定义的ViewHolder，持有每个Item的的所有界面元素
     public static class ViewHolder extends RecyclerView.ViewHolder {
         public TextView mTextView;
+        public ImageView iv_chat;
         public ViewHolder(View view){
             super(view);
 //            mTextView = (TextView) view.findViewById(R.id.text);
+            iv_chat= (ImageView) view.findViewById(R.id.iv_chat);
         }
     }
 }

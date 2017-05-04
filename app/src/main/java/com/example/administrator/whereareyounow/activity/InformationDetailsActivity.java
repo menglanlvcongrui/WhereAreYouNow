@@ -1,5 +1,6 @@
 package com.example.administrator.whereareyounow.activity;
 
+import android.content.Intent;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -38,6 +39,14 @@ public class InformationDetailsActivity extends AppCompatActivity {
         tv_title_center.setText("信息详情");
         iv_left.setVisibility(View.VISIBLE);
         iv_left.setImageResource(R.drawable.chat_white);
+        iv_left.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent();
+                intent.setClass(InformationDetailsActivity.this,ChatActivity.class);
+                startActivity(intent);
+            }
+        });
         iv_title_right.setVisibility(View.VISIBLE);
         iv_title_right.setImageResource(R.drawable.release_white);
     }
