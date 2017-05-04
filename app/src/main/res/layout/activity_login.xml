@@ -88,11 +88,11 @@
             android:layout_height="wrap_content" />-->
         <CheckBox
             android:id="@+id/iv"
+            android:gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
             android:background="@null"
-            android:drawableLeft="@drawable/mo_ren"
+            android:drawableLeft="@drawable/login_checkbox_selector"
             android:button="@null" />
         <TextView
             android:layout_toRightOf="@+id/iv"
