@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.example.administrator.whereareyounow.R;
 
 public class InformationDetailsActivity extends AppCompatActivity {
+    private ImageView iv_title_left;
     private TextView tv_title_center;
     private ImageView iv_title_right;
     private ImageView iv_left;
@@ -24,11 +25,20 @@ public class InformationDetailsActivity extends AppCompatActivity {
 //            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
         }
         setContentView(R.layout.activity_information_details);
+        iv_title_left= (ImageView)findViewById(R.id.title_left);
         tv_title_center= (TextView)findViewById(R.id.title_center);
         iv_left= (ImageView) findViewById(R.id.iv_left);
         iv_title_right= (ImageView) findViewById(R.id.title_right1);
+        iv_title_left.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
         tv_title_center.setText("信息详情");
         iv_left.setVisibility(View.VISIBLE);
-        iv_title_right.setImageResource(R.drawable.release);
+        iv_left.setImageResource(R.drawable.chat_white);
+        iv_title_right.setVisibility(View.VISIBLE);
+        iv_title_right.setImageResource(R.drawable.release_white);
     }
 }

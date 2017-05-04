@@ -28,7 +28,8 @@ TextView forgetpwd;
         forgetpwd= (TextView) findViewById(R.id.forgetpwd);
         tv_title_center= (TextView)findViewById(R.id.title_center);
         iv= (ImageView) findViewById(R.id.title_right1);
-        iv.setImageResource(R.drawable.love);
+        iv.setVisibility(View.VISIBLE);
+        iv.setImageResource(R.drawable.change_password);
         tv_title_center.setText("修改密码");
         forgetpwd.setOnClickListener(new View.OnClickListener() {
             @Override
