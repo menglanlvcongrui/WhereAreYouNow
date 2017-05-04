@@ -12,6 +12,7 @@
         app:layout_heightPercent="0.1"
         layout="@layout/navigation_bar"></include>
     <LinearLayout
+        android:id="@+id/line1"
         android:layout_width="match_parent"
         android:orientation="vertical"
         android:layout_height="wrap_content">
@@ -132,6 +133,7 @@
             android:layout_height="1dp"/>
     </LinearLayout>
     <LinearLayout
+        android:id="@+id/line2"
         android:layout_width="match_parent"
         android:orientation="vertical"
         android:layout_height="wrap_content">
@@ -255,6 +257,7 @@
             android:layout_height="1dp"/>
     </LinearLayout>
     <LinearLayout
+        android:id="@+id/line3"
         android:layout_width="match_parent"
         android:orientation="vertical"
         android:layout_height="wrap_content">
