@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.example.administrator.whereareyounow.view.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.example.administrator.whereareyounow.view.PercentLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:layout_gravity="bottom"
+    android:fitsSystemWindows="true"
+    android:background="#e6e6e6"
     tools:context="com.example.administrator.whereareyounow.activity.ChatActivity">
 
     <include
@@ -16,16 +18,18 @@
         app:layout_heightPercent="0.1"></include>
 
     <android.support.v7.widget.RecyclerView
+        android:overScrollMode="never"
         android:id="@+id/msg_recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:layout_below="@+id/shouye"></android.support.v7.widget.RecyclerView>
 
     <LinearLayout
         android:id="@+id/line"
         android:layout_gravity="bottom"
         android:layout_width="match_parent"
-        android:layout_alignParentBottom="true"
+        android:layout_marginTop="10dp"
         android:layout_height="wrap_content">
         <EditText
             android:id="@+id/input_text"
@@ -41,4 +45,4 @@
             android:layout_height="wrap_content"
             android:text="发送" />
     </LinearLayout>
-</com.example.administrator.whereareyounow.view.PercentRelativeLayout>
+</com.example.administrator.whereareyounow.view.PercentLinearLayout>

@@ -3,15 +3,17 @@ package com.example.administrator.whereareyounow.view;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.os.Build;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowInsets;
 import android.widget.LinearLayout;
 
 import com.example.administrator.whereareyounow.R;
 
 public class PercentLinearLayout extends LinearLayout {
-
+    private int[] mInsets = new int[4];
     public PercentLinearLayout(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
     }
@@ -23,7 +25,21 @@ public class PercentLinearLayout extends LinearLayout {
     public PercentLinearLayout(Context context) {
         super(context);
     }
-
+    public final int[] getInsets() {
+        return mInsets;
+    }
+    @Override
+    public final WindowInsets onApplyWindowInsets(WindowInsets insets) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT_WATCH) {
+            mInsets[0] = insets.getSystemWindowInsetLeft();
+            mInsets[1] = insets.getSystemWindowInsetTop();
+            mInsets[2] = insets.getSystemWindowInsetRight();
+            return super.onApplyWindowInsets(insets.replaceSystemWindowInsets(0, 0, 0,
+                    insets.getSystemWindowInsetBottom()));
+        } else {
+            return insets;
+        }
+    }
     //测量容器宽高
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {

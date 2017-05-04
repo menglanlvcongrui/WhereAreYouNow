@@ -7,7 +7,6 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.WindowManager;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -26,9 +25,9 @@ public class ChatActivity extends AppCompatActivity {
     Button btnSend;
     RecyclerView recyclerView;
     private MsgAdapter adapter;
-    InputMethodManager imm;
     LinearLayout line;
     private TextView tv_title_center;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,10 +38,8 @@ public class ChatActivity extends AppCompatActivity {
 //            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
         }
         setContentView(R.layout.activity_chat);
-//        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
-//        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE|WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
-        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE |
-                WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
+//        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE | WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
+
         initMsg();
         init();
         adapter = new MsgAdapter(msgList);
@@ -67,7 +64,7 @@ public class ChatActivity extends AppCompatActivity {
         inputText = (EditText) findViewById(R.id.input_text);
         recyclerView = (RecyclerView) findViewById(R.id.msg_recyclerView);
         line = (LinearLayout) findViewById(R.id.line);
-        tv_title_center= (TextView)findViewById(R.id.title_center);
+        tv_title_center = (TextView) findViewById(R.id.title_center);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(linearLayoutManager);
     }

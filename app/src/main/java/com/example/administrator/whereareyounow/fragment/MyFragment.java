@@ -17,8 +17,10 @@ import android.widget.TextView;
 
 import com.example.administrator.whereareyounow.R;
 import com.example.administrator.whereareyounow.activity.AccountSettingActivity;
+import com.example.administrator.whereareyounow.activity.LoginActivity;
 import com.example.administrator.whereareyounow.activity.PushnotificationActivity;
 import com.example.administrator.whereareyounow.activity.RealnameActivity;
+import com.example.administrator.whereareyounow.activity.SigninActivity;
 import com.example.administrator.whereareyounow.activity.UseragreementActivity;
 
 
@@ -29,7 +31,7 @@ public class MyFragment extends Fragment implements View.OnClickListener {
     private RelativeLayout layout_push,layout_user,layout_count,layout_realname;
     private ImageView title_left;
     private ImageView title_right1;
-    private TextView my_title_center;
+    private TextView my_title_center,mine_login,mine_regist;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -45,6 +47,10 @@ public class MyFragment extends Fragment implements View.OnClickListener {
         layout_count = (RelativeLayout) view.findViewById(R.id.layout_count);
         layout_user= (RelativeLayout) view.findViewById(R.id.layout_user);
         layout_realname=(RelativeLayout)view.findViewById(R.id.layout_realname);
+        mine_login= (TextView) view.findViewById(R.id.mine_login);
+        mine_regist= (TextView) view.findViewById(R.id.mine_regist);
+        mine_login.setOnClickListener(this);
+        mine_regist.setOnClickListener(this);
         layout_realname.setOnClickListener(this);
         layout_user.setOnClickListener(this);
         layout_count.setOnClickListener(this);
@@ -73,6 +79,14 @@ public class MyFragment extends Fragment implements View.OnClickListener {
                 break;
             case R.id.layout_realname:
                 intent = new Intent(getActivity(), RealnameActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.mine_login:
+                intent = new Intent(getActivity(), LoginActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.mine_regist:
+                intent = new Intent(getActivity(), SigninActivity.class);
                 startActivity(intent);
                 break;
         }

@@ -19,17 +19,22 @@
         <activity android:name=".InfomationActivity" />
         <activity android:name=".activity.AccountSettingActivity" />
         <activity android:name=".activity.ChangepwdActivity" />
-        <activity android:name=".activity.ForgetpwdActivity" />
+        <activity
+            android:name=".activity.ForgetpwdActivity"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden" />
         <activity android:name=".activity.HelpPublishActivity" />
         <activity android:name=".activity.InformationDetailsActivity" />
         <activity android:name=".activity.PublishInformationActivity" />
         <activity android:name=".activity.PushnotificationActivity" />
         <activity android:name=".activity.RealnameActivity" />
         <activity android:name=".activity.UseragreementActivity" />
+        <activity android:name=".activity.LoginActivity" />
+        <activity
+            android:name=".activity.SigninActivity"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden" />
         <activity
             android:name=".activity.ChatActivity"
-            android:screenOrientation="portrait"
-          ></activity>
+            android:windowSoftInputMode="adjustUnspecified|stateHidden" />
     </application>
 
 </manifest>

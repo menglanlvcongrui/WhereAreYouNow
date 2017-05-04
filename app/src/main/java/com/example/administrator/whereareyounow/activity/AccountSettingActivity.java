@@ -45,14 +45,14 @@ public class AccountSettingActivity extends AppCompatActivity implements View.On
         Intent intent;
         switch (view.getId()){
             case R.id.exit_account:
-               // startExitDialog();
+                startExitDialog();
                 break;
             case R.id.modify_password:
                 intent=new Intent(AccountSettingActivity.this,ChangepwdActivity.class);
                 startActivity(intent);
                 break;
             case R.id.contact_us:
-              // startContactDialog();
+               startContactDialog();
                 break;
         }
     }

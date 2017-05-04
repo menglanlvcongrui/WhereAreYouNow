@@ -3,112 +3,154 @@ package com.example.administrator.whereareyounow.view;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.graphics.Rect;
+import android.os.Build;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowInsets;
 import android.widget.RelativeLayout;
 
 import com.example.administrator.whereareyounow.R;
 
-public class PercentRelativeLayout extends RelativeLayout{
+public class PercentRelativeLayout extends RelativeLayout {
+    private int[] mInsets = new int[4];
 
-	public PercentRelativeLayout(Context context, AttributeSet attrs, int defStyle) {
-		super(context, attrs, defStyle);
-	}
+    public PercentRelativeLayout(Context context, AttributeSet attrs, int defStyle) {
+        super(context, attrs, defStyle);
+    }
 
-	public PercentRelativeLayout(Context context, AttributeSet attrs) {
-		super(context, attrs);
-	}
+    public PercentRelativeLayout(Context context, AttributeSet attrs) {
+        super(context, attrs);
+    }
 
-	public PercentRelativeLayout(Context context) {
-		super(context);
-	}
-	//测量容器宽高
-	@Override
-	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-		int width= MeasureSpec.getSize(widthMeasureSpec);
-		int height= MeasureSpec.getSize(heightMeasureSpec);
-		int ChildCount=this.getChildCount();
-		//测量出子控件进行改变
-		for(int i=0;i<ChildCount;i++){
-			View child=this.getChildAt(i);//每一个子控件
-			ViewGroup.LayoutParams layoutParams=child.getLayoutParams();
-			//解析自定义的宽高，进行替换
-			float widthPercent=0;
-			float heightPercent=0;
-			if (layoutParams instanceof LayoutParams) {
-				widthPercent=((LayoutParams) layoutParams).getWidthPercent();
-				heightPercent=((LayoutParams) layoutParams).getHeightPercent();
-			}
-			if (widthPercent!=0) {
-				layoutParams.width=(int)(width*widthPercent);
-			}
-			if(heightPercent!=0){
-				layoutParams.height=(int)(height*heightPercent);
-			}
-		}
-		super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-	}
-	//用来对子控件进行布局
-	@Override
-	protected void onLayout(boolean changed, int l, int t, int r, int b) {
-		// TODO Auto-generated method stub
-		super.onLayout(changed, l, t, r, b);
+    public PercentRelativeLayout(Context context) {
+        super(context);
+    }
 
-	}
-	@Override
-	public LayoutParams generateLayoutParams(AttributeSet attrs) {
-		// TODO Auto-generated method stub
-		return new LayoutParams(getContext(),attrs);
-	}
-	public static class LayoutParams extends RelativeLayout.LayoutParams{
-		float widthPercent;
-		float heightPercent;
+    public final int[] getInsets() {
+        return mInsets;
+    }
 
-		public float getWidthPercent() {
-			return widthPercent;
-		}
+    /**
+     * 此方法以过期，当应用最低API支持为20后，可以重写以下方法
+     * *  未测试……
+     */
+    @Override
+    public final WindowInsets onApplyWindowInsets(WindowInsets insets) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT_WATCH) {
+            mInsets[0] = insets.getSystemWindowInsetLeft();
+            mInsets[1] = insets.getSystemWindowInsetTop();
+            mInsets[2] = insets.getSystemWindowInsetRight();
+            return super.onApplyWindowInsets(insets.replaceSystemWindowInsets(0, 0, 0,
+                    insets.getSystemWindowInsetBottom()));
+        } else {
+            return insets;
+        }
+    }
 
-		public void setWidthPercent(float widthPercent) {
-			this.widthPercent = widthPercent;
-		}
+    @Override
+    protected final boolean fitSystemWindows(Rect insets) {
 
-		public float getHeightPercent() {
-			return heightPercent;
-		}
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT_WATCH) {
+            mInsets[0] = insets.left;
+            mInsets[1] = insets.top;
+            mInsets[2] = insets.right;
+            return super.fitSystemWindows(insets);
+        } else {
+            return super.fitSystemWindows(insets);
+        }
+    }
 
-		public void setHeightPercent(float heightPercent) {
-			this.heightPercent = heightPercent;
-		}
+    //测量容器宽高
+    @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        int width = MeasureSpec.getSize(widthMeasureSpec);
+        int height = MeasureSpec.getSize(heightMeasureSpec);
+        int ChildCount = this.getChildCount();
+        //测量出子控件进行改变
+        for (int i = 0; i < ChildCount; i++) {
+            View child = this.getChildAt(i);//每一个子控件
+            ViewGroup.LayoutParams layoutParams = child.getLayoutParams();
+            //解析自定义的宽高，进行替换
+            float widthPercent = 0;
+            float heightPercent = 0;
+            if (layoutParams instanceof LayoutParams) {
+                widthPercent = ((LayoutParams) layoutParams).getWidthPercent();
+                heightPercent = ((LayoutParams) layoutParams).getHeightPercent();
+            }
+            if (widthPercent != 0) {
+                layoutParams.width = (int) (width * widthPercent);
+            }
+            if (heightPercent != 0) {
+                layoutParams.height = (int) (height * heightPercent);
+            }
+        }
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+    }
 
-		public LayoutParams(Context c, AttributeSet attrs) {
-			super(c, attrs);
-			TypedArray array=c.obtainStyledAttributes(attrs,R.styleable.percentRelativelayout);
-			widthPercent=array.getFloat(R.styleable.percentRelativelayout_layout_widthPercent, 0);
-			heightPercent=array.getFloat(R.styleable.percentRelativelayout_layout_heightPercent, 0);
-			array.recycle();
-		}
+    //用来对子控件进行布局
+    @Override
+    protected void onLayout(boolean changed, int l, int t, int r, int b) {
+        // TODO Auto-generated method stub
+        super.onLayout(changed, l, t, r, b);
 
-		public LayoutParams(int w, int h) {
-			super(w, h);
-			// TODO Auto-generated constructor stub
-		}
+    }
 
-		public LayoutParams(ViewGroup.LayoutParams source) {
-			super(source);
-			// TODO Auto-generated constructor stub
-		}
+    @Override
+    public LayoutParams generateLayoutParams(AttributeSet attrs) {
+        // TODO Auto-generated method stub
+        return new LayoutParams(getContext(), attrs);
+    }
 
-		@SuppressLint("NewApi")
-		public LayoutParams(RelativeLayout.LayoutParams source) {
-			super(source);
-			// TODO Auto-generated constructor stub
-		}
+    public static class LayoutParams extends RelativeLayout.LayoutParams {
+        float widthPercent;
+        float heightPercent;
 
-		public LayoutParams(MarginLayoutParams source) {
-			super(source);
-			// TODO Auto-generated constructor stub
-		}
+        public float getWidthPercent() {
+            return widthPercent;
+        }
 
-	}
+        public void setWidthPercent(float widthPercent) {
+            this.widthPercent = widthPercent;
+        }
+
+        public float getHeightPercent() {
+            return heightPercent;
+        }
+
+        public void setHeightPercent(float heightPercent) {
+            this.heightPercent = heightPercent;
+        }
+
+        public LayoutParams(Context c, AttributeSet attrs) {
+            super(c, attrs);
+            TypedArray array = c.obtainStyledAttributes(attrs, R.styleable.percentRelativelayout);
+            widthPercent = array.getFloat(R.styleable.percentRelativelayout_layout_widthPercent, 0);
+            heightPercent = array.getFloat(R.styleable.percentRelativelayout_layout_heightPercent, 0);
+            array.recycle();
+        }
+
+        public LayoutParams(int w, int h) {
+            super(w, h);
+            // TODO Auto-generated constructor stub
+        }
+
+        public LayoutParams(ViewGroup.LayoutParams source) {
+            super(source);
+            // TODO Auto-generated constructor stub
+        }
+
+        @SuppressLint("NewApi")
+        public LayoutParams(RelativeLayout.LayoutParams source) {
+            super(source);
+            // TODO Auto-generated constructor stub
+        }
+
+        public LayoutParams(MarginLayoutParams source) {
+            super(source);
+            // TODO Auto-generated constructor stub
+        }
+
+    }
 }
