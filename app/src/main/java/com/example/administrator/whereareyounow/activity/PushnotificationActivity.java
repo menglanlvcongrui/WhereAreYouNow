@@ -33,6 +33,7 @@ public class PushnotificationActivity extends AppCompatActivity implements View.
         }
         setContentView(R.layout.activity_pushnotification);
 
+
         //初始化数据
         list = new ArrayList<>();
         initDatas();
