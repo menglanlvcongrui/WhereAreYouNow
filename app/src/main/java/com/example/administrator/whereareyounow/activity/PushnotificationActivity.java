@@ -37,6 +37,7 @@ public class PushnotificationActivity extends AppCompatActivity implements View.
         list = new ArrayList<>();
         initDatas();
         initView();
+
         adapter = new PushnotificationAdapter(this, list);
         pushlist.setAdapter(adapter);
         tv_title_center.setText("通知");
