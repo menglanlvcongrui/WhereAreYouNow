@@ -4,10 +4,12 @@
     android:layout_height="match_parent"
     tools:context="com.example.administrator.whereareyounow.fragment.TimeFragment">
 
-    <android.support.v7.widget.RecyclerView
+    <com.lfq.pulltorefresh.library.PullToRefreshRecyclerView
         android:id="@+id/rcv"
         android:focusableInTouchMode="true"
+        android:overScrollMode="never"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
+        android:layout_height="match_parent"></com.lfq.pulltorefresh.library.PullToRefreshRecyclerView>
+
 
 </FrameLayout>

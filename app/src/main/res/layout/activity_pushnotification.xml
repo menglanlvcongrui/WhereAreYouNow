@@ -14,10 +14,16 @@
         android:layout_height="wrap_content"
         app:layout_heightPercent="0.1"></include>
 
-    <android.support.v7.widget.RecyclerView
+   <!-- <android.support.v7.widget.RecyclerView
         android:overScrollMode="never"
         android:id="@+id/push_notificate"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:focusableInTouchMode="true"></android.support.v7.widget.RecyclerView>
+        android:focusableInTouchMode="true"></android.support.v7.widget.RecyclerView>-->
+    <com.lfq.pulltorefresh.library.PullToRefreshRecyclerView
+        android:id="@+id/rcv"
+        android:focusableInTouchMode="true"
+        android:overScrollMode="never"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></com.lfq.pulltorefresh.library.PullToRefreshRecyclerView>
 </com.example.administrator.whereareyounow.view.PercentLinearLayout>
