@@ -72,7 +72,7 @@
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="10dp"
                     android:background="@null"
-                    android:hint="密码6-16个字符组成（字母加数字）"
+                    android:hint="密码6-16个字组成"
                     android:textColor="@color/grayEleven"
                     android:textSize="@dimen/text_size_three" />
             </LinearLayout>
@@ -98,7 +98,7 @@
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="10dp"
                     android:background="@null"
-                    android:hint="密码6-16个字符组成（字母加数字）"
+                    android:hint="密码6-16个字组成"
                     android:textColor="@color/grayEleven"
                     android:textSize="@dimen/text_size_three" />
             </LinearLayout>

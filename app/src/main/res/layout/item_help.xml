@@ -158,8 +158,9 @@
                     android:layout_marginTop="12dp"
                     android:orientation="horizontal">
                     <TextView
+                        android:textStyle="bold"
                         android:text="信息标题信息标题"
-                        android:textColor="@color/Treeblack"
+                        android:textColor="#000"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
                 </LinearLayout>
@@ -170,7 +171,7 @@
                     android:layout_marginTop="10dp"
                     android:orientation="vertical">
                     <TextView
-                        android:text="详细内容信息详细内容详细内容...."
+                        android:text="详细内容信息详细内容信息"
                         android:textColor="@color/Treeblack"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
